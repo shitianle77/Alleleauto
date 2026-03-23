@@ -1,0 +1,3 @@
+[submodule "genetribe"]
+	path = genetribe
+	url = git@github.com:shitianle77/genetribe.git
