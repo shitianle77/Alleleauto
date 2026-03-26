@@ -1,4 +1,4 @@
-#!Rscript
+#!/usr/bin/env Rscript
 # Usage: Rscript myscript.R
 ##################################################################################################################
 #Identification and classification of differentially expressed allele pairs

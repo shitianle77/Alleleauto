@@ -161,8 +161,8 @@ step31_start=$(date +%s)
 #######################################################
 for i in `cat $pwd/00_data/$chrpairs|cut -f 3`
 do
-ln -s ../${i}/output/${i}A_${i}B.blast2 ./
-ln -s ../${i}/output/${i}B_${i}A.blast2 ./
+ln -s ../${i}/genetribe_output/${i}A_${i}B.blast2 ./
+ln -s ../${i}/genetribe_output/${i}B_${i}A.blast2 ./
 ln -s ../${i}/${i}A_${i}B.RBH ./
 awk '{print $2"\t"$1}' ${i}B_${i}A.blast2 |cat - ${i}A_${i}B.blast2|awk '{print $1"\t"$2}'|sort|uniq -c|awk '{if($1==2)print $2"\t"$3}'|grep -w -f - ../RBH.genepairs > ${i}_RBH_2hits.genepairs2 
 grep -w -f ${i}_RBH_2hits.genepairs2 ${i}A_${i}B.blast2 > ${i}_RBH_2hits.blast2
@@ -180,7 +180,7 @@ rm -rf stats
 for i in `cat $pwd/00_data/$chrpairs|cut -f 3`
 do
 cd ${i}
-rm -rf output
+rm -rf genetribe_output
 cd ..
 done
 
