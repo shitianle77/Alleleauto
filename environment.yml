@@ -10,9 +10,10 @@ dependencies:
   - r-essentials
   - blast
   - biopython
-  - bedtools  ##为了genetribe提前安装上
+  - bedtools
   - wgdi
   - ParaFly  
+  - bioconductor-deseq2 
   - pip
   - pip:
     - jcvi
