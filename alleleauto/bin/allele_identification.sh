@@ -91,8 +91,8 @@ grep ${i} $pwd/00_data/${SA}.bed > ${i}A.bed
 grep ${i} $pwd/00_data/${SB}.bed > ${i}B.bed
 cat $pwd/00_data/${SA}.bed|grep ${i}|awk '{print $4}' > ${SA}.genelist
 cat $pwd/00_data/${SB}.bed|grep ${i}|awk '{print $4}' > ${SB}.genelist
-perl $pwd/bin/fasta_no_blank.pl $pwd/00_data/${SA}.pep| grep -A 1 -F -f  ${SA}.genelist - > ${i}A.fa
-perl $pwd/bin/fasta_no_blank.pl $pwd/00_data/${SB}.pep| grep -A 1 -F -f  ${SB}.genelist - > ${i}B.fa
+perl $pwd/bin/fasta_no_blank.pl $pwd/00_data/${SA}.pep| grep -A 1 -F -f  ${SA}.genelist - | grep -v '^--$' > ${i}A.fa
+perl $pwd/bin/fasta_no_blank.pl $pwd/00_data/${SB}.pep| grep -A 1 -F -f  ${SB}.genelist - | grep -v '^--$' > ${i}B.fa
 rm ${SA}.genelist ${SB}.genelist
 cd ..
 done
